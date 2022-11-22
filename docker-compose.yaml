@@ -5,8 +5,9 @@ services:
     container_name: movie-ratings-db
     restart: always
     environment:
-      - MYSQL_DATABASE= ${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD= ${MYSQL_ROOT_PASSWORD}
-      - MYSQL_ROOT_USERNAME= ${MYSQL_ROOT_USERNAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     ports:
       - '3306:3306'
