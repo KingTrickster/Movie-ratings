@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity @Data
 public class Comment {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
     private String bodyText;
@@ -17,6 +17,7 @@ public class Comment {
     private Date publishedDate;
 
     @ManyToOne
+    @JoinColumn(name = "movie_id", nullable = false)
     @JsonBackReference
     private Movie movie;
 }
